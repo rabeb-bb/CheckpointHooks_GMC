@@ -87,7 +87,7 @@ export default function AddMovies({addMovie}) {
 
   return (
     <div>
-      <Fab color="primary" aria-label="add" style={{margin: "4% 2% 1% 80%"}} onClick={handleOpen}>
+      <Fab color="primary" aria-label="add"  onClick={handleOpen}>
         <AddIcon />
       </Fab>
       <Modal

@@ -1,5 +1,5 @@
 
-import React, { useState} from 'react';
+import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -74,7 +74,7 @@ export default function Navbar({searchTerm, setSearchTerm}) {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" style={{backgroundColor:"rgba(34, 28, 48, 0.65)", position:"fixed"}}>
+      <AppBar position="static" style={{backgroundColor:"rgba(34, 28, 48, 0.65)"}}>
         <Toolbar>
           <IconButton
             edge="start"

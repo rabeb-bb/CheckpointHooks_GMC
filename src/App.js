@@ -5,6 +5,7 @@ import MovieList from './Components/MovieList/MovieList';
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import AddMovies from './Components/AddMovie/AddMovie';
+import Filter from './Components/Filter/Filter';
 
 function App() {
   const [list, setList]=useState([
@@ -89,8 +90,10 @@ function App() {
     }
   ])
   const[searchTerm, setSearchTerm]=useState('')
-
-  
+  const[searchType, setSearchType]=useState('')
+  const[searchRate, setSearchRate]=useState('')
+  const[searchYear, setSearchYear]=useState('')
+ 
   const addMovie=(movie)=>{
     
     setList([...list,movie]);
@@ -99,9 +102,16 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar list={list} setList={setList} searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <div style={{display:"flex", justifyContent:"space-around", margin:"1%"}}>
+      <Filter 
+      searchTerm={searchTerm} setSearchTerm={setSearchTerm}
+      searchType={searchType} setSearchType={setSearchType}
+      searchRate={searchRate} setSearchRate={setSearchRate}
+      />
       <AddMovies  addMovie={addMovie}/>
-      <MovieList movies={list} setMovies={setList} searchTerm={searchTerm}/>
+      </div>
+      <MovieList movies={list} setMovies={setList} searchTerm={searchTerm} searchRate={searchRate} searchType={searchType}/>
       <Footer />
       
      
