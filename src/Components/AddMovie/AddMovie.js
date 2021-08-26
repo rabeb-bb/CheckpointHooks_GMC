@@ -5,6 +5,8 @@ import SimpleModal from '@material-ui/core/Modal';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import TextField from '@material-ui/core/TextField';
+import { Box, Typography } from '@material-ui/core';
+import Rating from '@material-ui/lab/Rating';
 
 function rand() {
   return Math.round(Math.random() * 20) - 10;
@@ -70,6 +72,16 @@ export default function AddMovies({addMovie}) {
         <TextField id="standard-name" label="Type" onChange={(e)=>setType(e.target.value)} value={type} />
         <TextField id="standard-name" label="Rating" onChange={(e)=>setRating(e.target.value)} value={rating} />
         <TextField id="standard-name" label="Description" onChange={(e)=>setDesc(e.target.value)}  value={description} /><br/>
+        <Box component="fieldset" mb={3} borderColor="transparent">
+                    <Typography component="legend">Rating</Typography>
+                    <Rating
+                    name="simple-controlled"
+                    value={rating}
+                    onChange={(event, newValue) => {
+                        setRating(newValue);
+                    }}
+                    />
+        </Box>
         <Fab color="primary" aria-label="add"  onClick={(e)=>handleForm(e)}>
         {/* <Fab color="primary" aria-label="add"  onClick={()=>addMovie({image, name, type, rating, description})}> */}
         <AddIcon />

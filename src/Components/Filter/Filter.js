@@ -6,6 +6,8 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
+import { Box, Typography } from '@material-ui/core';
+import Rating from '@material-ui/lab/Rating';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -42,7 +44,7 @@ const Filter = ({searchTerm, setSearchTerm,searchType, setSearchType,searchRate,
     //     setValues({ ...values, [prop]: event.target.value });
     //   };
     return (
-        <div className={classes.root2}  style={{margin: "0% 50% 1% 0%", width:"60%", backgroundColor:"rgba(255,255,255,0.3)"}} >
+        <div className={classes.root2}  style={{margin: "0% 50% 1% 0%", width:"60%", color:"white"}} >
             <Button variant="outlined" style={{color:"white",border:"white"}} onClick={()=>toggleShow()}>Browse Movies</Button>
             {show? 
             <div  >
@@ -63,23 +65,31 @@ const Filter = ({searchTerm, setSearchTerm,searchType, setSearchType,searchRate,
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 />
-                <TextField
+                
+                {/* <TextField
                 label="Rating"
                 id="outlined-start-adornment"
                 className={clsx(classes.margin, classes.textField)}
                 value={searchRate}
                 onChange={(e)=>setSearchRate(e.target.value)}
                 variant="outlined"
-                />
+                /> */}
                 <TextField
                 label="Year"
                 id="outlined-start-adornment"
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
-                /><br/>
-                <Button variant="contained" color="primary">
-                    Search
-                </Button>
+                />
+                <Box component="fieldset" mb={3} borderColor="transparent">
+                    <Typography component="legend">Rating</Typography>
+                    <Rating
+                    name="simple-controlled"
+                    value={searchRate}
+                    onChange={(event, newValue) => {
+                        setSearchRate(newValue);
+                    }}
+                    />
+                </Box>
                 
         </div>:null}
 
