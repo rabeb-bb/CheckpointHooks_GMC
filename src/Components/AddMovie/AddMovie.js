@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import SimpleModal from '@material-ui/core/Modal';
@@ -57,11 +57,19 @@ export default function AddMovies({addMovie}) {
   const handleClose = () => {
     setOpen(false);
   };
+  const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
 //the form inside the modal
   const handleForm=(e)=>{
     e.preventDefault();
     addMovie({image, name, type, rating, description});
     // e.target.value=""
+    e.target.reset()
+    if (name && type && description && image && rating) {
+      setValid(true);
+    }
+    setSubmitted(true);
+
   }
   const body = (
     <div style={modalStyle} className={classes.paper}>
@@ -70,7 +78,7 @@ export default function AddMovies({addMovie}) {
         <TextField id="standard-name" label="Name" onChange={(e)=>setTitle(e.target.value)} value={name} />
         <TextField id="standard-name" label="Cover URL" onChange={(e)=>setImage(e.target.value)}  value={image} />
         <TextField id="standard-name" label="Type" onChange={(e)=>setType(e.target.value)} value={type} />
-        <TextField id="standard-name" label="Rating" onChange={(e)=>setRating(e.target.value)} value={rating} />
+        {/* <TextField id="standard-name" label="Rating" onChange={(e)=>setRating(e.target.value)} value={rating} /> */}
         <TextField id="standard-name" label="Description" onChange={(e)=>setDesc(e.target.value)}  value={description} /><br/>
         <Box component="fieldset" mb={3} borderColor="transparent">
                     <Typography component="legend">Rating</Typography>

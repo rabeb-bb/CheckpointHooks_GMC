@@ -36,7 +36,6 @@ const useStyles = makeStyles((theme) => ({
 const Filter = ({searchTerm, setSearchTerm,searchType, setSearchType,searchRate, setSearchRate}) => {
     const classes = useStyles();
     const[show, setShow]=useState(false)
-
     const toggleShow=()=>{
       setShow(!show)
     }
@@ -65,15 +64,6 @@ const Filter = ({searchTerm, setSearchTerm,searchType, setSearchType,searchRate,
                 className={clsx(classes.margin, classes.textField)}
                 variant="outlined"
                 />
-                
-                {/* <TextField
-                label="Rating"
-                id="outlined-start-adornment"
-                className={clsx(classes.margin, classes.textField)}
-                value={searchRate}
-                onChange={(e)=>setSearchRate(e.target.value)}
-                variant="outlined"
-                /> */}
                 <TextField
                 label="Year"
                 id="outlined-start-adornment"
@@ -83,7 +73,7 @@ const Filter = ({searchTerm, setSearchTerm,searchType, setSearchType,searchRate,
                 <Box component="fieldset" mb={3} borderColor="transparent">
                     <Typography component="legend">Rating</Typography>
                     <Rating
-                    name="simple-controlled"
+                   
                     value={searchRate}
                     onChange={(event, newValue) => {
                         setSearchRate(newValue);
@@ -91,7 +81,7 @@ const Filter = ({searchTerm, setSearchTerm,searchType, setSearchType,searchRate,
                     />
                 </Box>
                 
-        </div>:null}
+            </div>:null}
 
             
         </div>
