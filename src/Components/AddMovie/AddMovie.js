@@ -57,18 +57,22 @@ export default function AddMovies({addMovie}) {
   const handleClose = () => {
     setOpen(false);
   };
-  const [submitted, setSubmitted] = useState(false);
-  const [valid, setValid] = useState(false);
+  
 //the form inside the modal
   const handleForm=(e)=>{
     e.preventDefault();
     addMovie({image, name, type, rating, description});
-    // e.target.value=""
-    e.target.reset()
-    if (name && type && description && image && rating) {
-      setValid(true);
-    }
-    setSubmitted(true);
+     setImage('')
+     setTitle('')
+     setDesc('')
+     setRating(0)
+     setType('')
+    // e.target.reset()
+    // if (name && type && description && image && rating) {
+    //   setValid(true);
+    // }
+    // setSubmitted(true);
+    handleClose(e)
 
   }
   const body = (
