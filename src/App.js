@@ -7,6 +7,8 @@ import Footer from './Components/Footer/Footer';
 import AddMovies from './Components/AddMovie/AddMovie';
 import Filter from './Components/Filter/Filter';
 import {moviesList} from './Data.js'
+import { Route, Router, Switch } from 'react-router-dom';
+import MovieDesc from './Pages/MovieDesc/MovieDesc';
 
 
 function App() {
@@ -15,6 +17,7 @@ function App() {
   const[searchType, setSearchType]=useState('')
   const[searchRate, setSearchRate]=useState('')
   const[searchYear, setSearchYear]=useState('')
+  const[film, setFilm]=useState('')
  
   const addMovie=(movie)=>{
     
@@ -24,7 +27,17 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+       <Navbar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
+      <Switch>
+        {/* <Route path="/movie/:movieId" render={(props) => <MovieDesc
+        //  name={props.state.name} type={props.state.type}
+        //  description={description} image={image} trailer={trailer} 
+        movie={props.match.params.movie}
+         {...props} />}/> */}
+         <Route exact path="/" render={(props)=>(
+          <div>
+           
       <div style={{display:"flex", justifyContent:"space-around", margin:"1%"}}>
       <Filter 
       searchTerm={searchTerm} setSearchTerm={setSearchTerm}
@@ -33,9 +46,14 @@ function App() {
       />
       <AddMovies  addMovie={addMovie}/>
       </div>
-      <MovieList movies={list} setMovies={setList} searchTerm={searchTerm} searchRate={searchRate} searchType={searchType}/>
-      <Footer />
+      <MovieList movies={list} setMovies={setList} searchTerm={searchTerm} searchRate={searchRate} searchType={searchType} setFilm={setFilm}/>
       
+     </div>
+         )
+         } />
+         <Route path='/:movieId' render={(props)=>(<MovieDesc  {...props}/>)}/>
+      </Switch>
+      <Footer />
      
     </div>
   );

@@ -7,6 +7,7 @@ export const moviesList= [
       name: "Devil's Mile",
       date: "2014",
       type: "Action | Crime",
+      trailer: "https://www.youtube.com/embed/iGTSDqSLXN0" ,
       description:
         "A relentlessly-paced hybrid of gritty crime thriller and Lovecraftian supernatural horror, The Devil's Mile follows a trio of kidnappers who take an ill-advised detour en route to deliver..."
     },
@@ -18,6 +19,7 @@ export const moviesList= [
       name: "Once Upon A Time In The west",
       date: "1968",
       type: "Western",
+      trailer: "https://www.youtube.com/embed/iGTSDqSLXN0",
       description:
         "A mysterious stranger with a harmonica joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad."
     },
@@ -29,6 +31,7 @@ export const moviesList= [
       name: "Taxi Driver",
       date: "1976",
       type: "Crime | Drama",
+      trailer:"https://www.youtube.com/embed/iGTSDqSLXN0" ,
       description:
         "A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action by attempting to liberate a presidential campaign worker and an underage prostitute."
     },
@@ -40,6 +43,7 @@ export const moviesList= [
       name: "Mad Max",
       date: "1979",
       type: "Action | Adventure",
+      trailer:"https://www.youtube.com/embed/iGTSDqSLXN0",
       description:
         "In a self-destructing world, a vengeful Australian policeman sets out to stop a violent motorcycle gang."
     },
@@ -51,6 +55,7 @@ export const moviesList= [
       name: "Little Miss Sunshine",
       date: "2006",
       type: "Comedy | Drama",
+      trailer:"https://www.youtube.com/embed/iGTSDqSLXN0",
       description:
         "A family determined to get their young daughter into the finals of a beauty pageant take a cross-country trip in their VW bus."
     },
@@ -62,6 +67,7 @@ export const moviesList= [
       name: "KILL BILL",
       date: "2003",
       type: "Action",
+      trailer: "https://www.youtube.com/embed/iGTSDqSLXN0",
       description:
         "The lead character, called 'The Bride,' was a member of the Deadly Viper Assassination Squad, led by her lover 'Bill.'The Bride' decided to escape her life as a killer.",
       details:
@@ -73,6 +79,7 @@ export const moviesList= [
         "https://i.pinimg.com/originals/3e/f1/ba/3ef1baaaceb5a95c4f57a7cb2393b39d.jpg",
       rating: 5,
       name: "The Wolf Of Wall Street",
+      trailer: "https://www.youtube.com/embed/iGTSDqSLXN0" ,
       date: "2013",
       type: " Biography | Crime | Drama  ",
       description:

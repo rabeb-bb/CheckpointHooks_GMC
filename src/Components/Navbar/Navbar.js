@@ -8,6 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -84,8 +85,11 @@ export default function Navbar({searchTerm, setSearchTerm}) {
           >
             <MenuIcon />
           </IconButton>
+          
           <Typography className={classes.title} variant="h6" noWrap>
+          <Link to='/' style={{ textDecoration: 'none' }}>
           Favorite Movies/TV SHows
+          </Link>
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>

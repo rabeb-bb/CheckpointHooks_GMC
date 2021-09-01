@@ -1,12 +1,13 @@
 import React from 'react'
 import Rating from '@material-ui/lab/Rating';
 import "./MovieCard.css"
+import { Link } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
 
     return (
-     
-      <div style={{margin:"0% 2%"}} >
+      <Link to={{pathname:`/${movie.id}` , state:{movie}}} style={{ textDecoration: 'none' }}> 
+      <div style={{margin:"0% 2%", padding:'1%'}} >
       <div className="container">
     <div className="cellphone-container">    
       <div className="movie">       
@@ -39,8 +40,10 @@ const MovieCard = ({movie}) => {
       </div>
     </div>
   </div>
-
+  
   </div>
+  </Link>
+
     )
 }
 
