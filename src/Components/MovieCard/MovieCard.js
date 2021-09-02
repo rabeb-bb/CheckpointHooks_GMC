@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 const MovieCard = ({movie}) => {
 
     return (
-      <Link to={{pathname:`/${movie.id}` , state:{movie}}} style={{ textDecoration: 'none' }}> 
+      
       <div style={{margin:"0% 2%", padding:'1%'}} >
+       <Link to={{pathname:`/${movie.id}` , state:{movie}}} style={{ textDecoration: 'none' }}>
       <div className="container">
     <div className="cellphone-container">    
       <div className="movie">       
@@ -40,9 +41,9 @@ const MovieCard = ({movie}) => {
       </div>
     </div>
   </div>
-  
-  </div>
   </Link>
+  </div>
+  
 
     )
 }
